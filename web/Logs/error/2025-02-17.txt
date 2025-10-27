@@ -1,0 +1,1 @@
+2025-02-17 11:17:22.0020 | 0 | ERROR | NovaChatAppReact.Helpers.WXHelper | 获取到得userInfo:{"errcode":40029,"errmsg":"invalid code, hint: [1739762241317910761149236], from ip: 222.72.248.194, more info at https://open.work.weixin.qq.com/devtool/query?e=40029"} 

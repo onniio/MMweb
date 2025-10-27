@@ -1,0 +1,434 @@
+@charset "utf-8";
+
+/* 通用的HTML5初始化样式 */
+
+/* 重置默认样式 */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, ol, li, table, tr, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+/* 引入多个自定义字体 */
+@font-face {
+	font-family: 'CustomFontRegular';
+  src: url('../fonts/PingFangSC/PingFang Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'CustomFontBold';
+  src: url('../fonts/PingFangSC/PingFang Bold.ttf') format('truetype');
+}
+
+
+/* 优化默认样式 */
+body {
+  line-height: 1.6;
+	font-family: 'CustomFontRegular', "PingFang SC", "Helvetica Neue", "Helvetica", "Arial","Hiragino Sans GB", "STHeiti","Microsoft YaHei", "Microsoft JhengHei", SimSun, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/* 处理块级元素 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* 处理链接 */
+a {
+  color: #854DFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* 处理列表 */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 处理图片 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 处理表格 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 处理响应式图像 */
+/* 保证图像不会超出父容器 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* 盒模型重置 */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+input,
+textarea,
+select {
+	width: 100%;
+	padding: 0.625rem;
+	border: none;
+	border: 1px solid #c8c8c8;
+	border-radius: 0;
+	background-color: transparent;
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border: 1px solid #c8c8c8;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color: #c8c8c8; /* 设置占位符的颜色值 */
+}
+
+/* 隐藏数字输入框右侧的微调按钮 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 一些浏览器需要额外的样式来隐藏微调按钮 */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+	width: 100%;
+	padding: 0;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0);
+	transition: all ease-in-out .2s;
+}
+button:hover {
+	opacity: .92;
+}
+.int {
+	width: 100%;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	font-size: 0.875rem;
+	border: none;
+	display: block;
+	color: #333;
+	background-color: rgba(0,0,0,0);
+	outline: none;
+	padding: 0 0.625rem;
+}
+.texta {
+	font-family: -apple-system, "PingFang SC", "Helvetica Neue", "Helvetica", "Arial","Hiragino Sans GB", "STHeiti","Microsoft YaHei", "Microsoft JhengHei", SimSun, sans-serif;
+	width: 100%;
+	font-size: 0.875rem;
+	resize: none;
+	outline: 0;
+	color: #333;
+	background-color: rgba(0,0,0,0);
+	height: 10rem;
+	padding: .625rem;
+	box-sizing: border-box;
+	border: none;
+}
+.text-danger {
+	font-size: .875rem;
+	color: red;
+	margin-top: .625rem;
+}
+
+/* 隐藏原始checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* 设置自定义复选框样式 */
+label {
+  display: inline-block;
+  position: relative;
+  width: 1.25rem; /* 可根据需求调整 */
+  height: 1.25rem; /* 可根据需求调整 */
+  cursor: pointer;
+  border: 1px solid #ccc; /* 复选框的边框样式 */
+  border-radius: 4px; /* 可以调整圆角 */
+  overflow: hidden; /* 隐藏超出边界的内容 */
+}
+
+/* 创建对勾图标 */
+label:after {
+  content: "";
+  display: inline-block;
+  width: 100%; /* 对勾的宽度与容器相同 */
+  height: 100%; /* 对勾的高度与容器相同 */
+  background-image: url('../images/check-solid.svg'); /* 替换为你的对勾SVG图标的URL */
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: 68%; /* 让图标填充整个容器 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0; /* 默认隐藏对勾 */
+}
+
+/* 设置复选框选中状态时对勾的外观 */
+input[type="checkbox"]:checked + label {
+  background-color: #854DFF; /* 设置选中时的背景颜色 */
+  border-color: #854DFF; /* 设置选中时的边框颜色 */
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1; /* 显示对勾 */
+	filter: brightness(0) invert(1); /* 将图标颜色反转为白色 */
+}
+.myCheckbox {
+	display: flex;
+	align-items: center;
+}
+
+/* common */
+.comForm li {
+	margin-bottom: .9375rem;
+}
+.comForm li:last-child {
+	margin-bottom: 0;
+}
+.comForm li dl {
+	margin-bottom: .9375rem;
+}
+.comForm li dl:last-child {
+	margin-bottom: 0;
+}
+.comForm li dt {
+	font-size: .9375rem;
+	color: #333;
+}
+.comForm li dd {
+	margin: .625rem 0 0;
+}
+.comForm li dd .int,
+.comForm li dd .texta {
+	font-size: .9375rem;
+	border: 1px solid #c8c8c8;
+	border-radius: .625rem;
+	color: #333;
+	transition: all ease-in-out 0.3s;
+}
+.comForm li dd .int:focus,
+.comForm li dd .texta:focus{
+  border-color: #854DFF;
+}
+
+.acBtn {
+	font-size: 1.125rem;
+	font-weight: bold;
+	color: #fff;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	background-color: #854DFF;
+	border-radius: 10px;
+	margin: 2.5rem 0 0;
+}
+
+/* start */
+.access {
+	display: flex;
+	height: 100vh;
+}
+.acMain {
+	flex: 0 0 46%;
+	padding: 2.5rem 0;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.acLogo {
+	position: absolute;
+	height: 2.375rem;
+	top: 2.5rem;
+	left: 2.5rem;
+}
+.acLogo img {
+	height: 100%;
+}
+.accessShow {
+	width: 100%;
+	padding: 0 15%;
+}
+.acTitle {
+	margin-bottom: .625rem;
+}
+.acTitle h3 {
+	font-size: 2.625rem;
+	font-family: 'CustomFontBold';
+	color: #333;
+}
+.acTitle p {
+	font-size: .875rem;
+	color: #7b7b7b;
+}
+.acAttach {
+	flex: 1;
+	padding: 1.5rem;
+}
+.acaBox {
+	position: relative;
+	height: 100%;
+	border-radius: 2.25rem;
+	overflow: hidden;
+}
+.acAttach img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.acPrivacy {
+	display: flex;
+	align-items: center;
+	margin-top: .625rem;
+}
+.priAgree {
+	margin-left: .375rem;
+}
+.priAgree {
+	font-size: .875rem;
+	color: #7b7b7b;
+}
+.acTo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: .625rem;
+}
+.acTo span {
+	font-size: .875rem;
+	color: #7b7b7b;
+}
+.acTo a {
+	font-size: .875rem;
+	color: #333;
+}
+.tips {
+	margin-top: .625rem;
+}
+.tips a {
+	font-size: .875rem;
+	color: #999;
+}
+
+/* 移动设备 */
+@media (max-width: 767px) {
+  /* 样式规则适用于移动设备 */
+	html {
+		font-size: 13px;
+	}
+	.acLogo {
+		position: inherit;
+		top: inherit;
+		left: inherit;
+	}
+	.accessShow {
+    padding: 0%;
+	}
+	.acTitle {
+    margin: 1.875rem 0 1.25rem;
+	}
+	.acTitle h3 {
+    font-size: 1.75rem;
+	}
+	.acLogo {
+		height: 2.625rem;
+	}
+	.access {
+		padding: 0 1.875rem;
+		display: flex;
+		align-items: center;
+	}
+	.acMain {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: auto;
+	}
+	.acMain::after {
+		content: ""; 
+		display: block; 
+		height: 100%; 
+		visibility: hidden; 
+	}
+}
+/* 平板设备 */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 样式规则适用于平板设备 */
+	html {
+		font-size: 14px;
+	}
+}
+/* 笔记本电脑设备 */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* 样式规则适用于笔记本电脑设备 */
+	html {
+		font-size: 15px;
+	}
+}
+/* 大屏幕设备 */
+@media (max-width: 1200px) {
+  /* 自由判断 */
+	.acAttach {
+		display: none;
+	}
+	.acMain {
+		flex: 1;
+	}
+}
+/* 大屏幕设备 */
+@media (min-width: 1200px) {
+  /* 样式规则适用于大屏幕设备 */
+	html {
+		font-size: 16px;
+	}
+	
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+	.register .comForm li dt {
+		display: none;
+	}
+	
+}
+

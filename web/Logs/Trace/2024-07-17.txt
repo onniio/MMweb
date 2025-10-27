@@ -1,0 +1,1 @@
+2024-07-17 11:15:10.7365 | 0 | DEBUG | NovaChatAppReact.Helpers.WXHelper | GetUserInfo请求：{"errcode":0,"errmsg":"ok","userid":"CGD10359","name":"吴杰","department":[727],"position":"","status":1,"isleader":0,"extattr":{"attrs":[]},"english_name":"","telephone":"","enable":1,"hide_mobile":0,"order":[32768],"main_department":727,"alias":"","is_leader_in_dept":[0],"direct_leader":[]} 

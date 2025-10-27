@@ -1,0 +1,1 @@
+2024-03-25 10:48:17.4893 | 0 | ERROR | NovaChatAppReact.Helpers.WXHelper | 获取到得userInfo:{"errcode":40058,"errmsg":"field `userid` unexpected empty string. invalid Request Parameter, hint: [1711334897567743539016467], from ip: 222.72.248.194, more info at https://open.work.weixin.qq.com/devtool/query?e=40058","department":[],"order":[],"is_leader_in_dept":[],"direct_leader":[]} 
